@@ -33,8 +33,8 @@ For a detailed understanding of the underlying concepts, check out my notebook i
 Below are some example results of the style transfer model:
 
 | Content Image | Style Image | Stylized Image |
-|---------------|-------------|----------------|
-| ![content](examples/content.jpg) | ![style](examples/style.jpg) | ![stylized](examples/stylized.jpg) |
+|---------------|------------|----------------|
+| ![content](data/content_dir/family-gc23518eae_640.jpg) | ![style](data/Vincent_van_Gogh_100.jpg) | ![stylized](examples/stylized.jpg) |
 
 ---
 
@@ -59,4 +59,3 @@ Below are some example results of the style transfer model:
 - [Helpful Article](https://sh-tsang.medium.com/brief-review-perceptual-losses-for-real-time-style-transfer-and-super-resolution-ac4fd2658b8)
 ---
 
-Feel free to explore the code and adapt it to your needs. If you encounter any issues, let me know!
