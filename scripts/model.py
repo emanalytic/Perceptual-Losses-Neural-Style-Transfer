@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
 
-
 class ResidualBlock(nn.Module):
     def __init__(self, channels):
         super(ResidualBlock, self).__init__()
@@ -17,7 +16,6 @@ class ResidualBlock(nn.Module):
         out = self.in2(self.conv2(out))
         out = out + residual
         return out
-
 
 class UpsampleConvLayer(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size, stride, upsample=None):
