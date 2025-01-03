@@ -14,3 +14,5 @@ class Config:
             return self.config[section].get(key, fallback=fallback)
         except KeyError:
             raise KeyError(f'{key} not found in {self.config_file}')
+
+

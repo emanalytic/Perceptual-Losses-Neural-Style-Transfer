@@ -1,37 +1,66 @@
+from torchvision.transforms import transforms
 import torch
-import torch.nn as nn
-from torchvision.models import vgg16, VGG16_Weights
+
+from utils.config import Config
+from PIL import Image
+
+config = Config()
+VGG_MEAN = config.get('settings', 'vgg_mean')
+VGG_STD = config.get('settings', 'vgg_std')
+TARGET_SIZE = config.get('settings', 'target_size')
+MODEL_KEY = config.get('keys', 'model_key')
+OPTIMIZER_KEY = config.get('keys', 'optimizer_key')
+EPOCH_KEY = config.get('keys', 'epoch_key')
+MODEL_CHECKPOINT_FILEPATH = config.get('paths', 'model_checkpoints')
+DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+STYLED_IMAGE_FILEPATH = config.get('paths', 'styled_image')
 
 
-class FeatureExtractor(nn.Module):
-    def __init__(self):
-        super().__init__()
-        vgg = vgg16(weights=VGG16_Weights).eval()
+def show_image(image):
+    image_transform = transforms.ToPILImage()
+    image = image.squeeze().cpu()
 
-        self.content_layer = '9'  # relu2_2
-        self.style_layers = ['4', '9', '16', '23']  # relu1_2, relu2_2, relu3_3, relu4_3
+    image = (image * VGG_STD[:, None, None]) + VGG_MEAN[:, None, None]
 
-        self.slices = nn.ModuleList()
-        i = 0
-        for layer in vgg.features.children():
-            if isinstance(layer, nn.ReLU):
-                i += 1
-                layer = nn.ReLU(inplace=False)
-            self.slices.append(layer)
-            if str(i) == self.style_layers[-1]:
-                break
+    image = image.clamp(0, 1)
+    return image_transform(image)
 
-    def forward(self, x, layer_ids):
-        feat = []
-        for i, layer in enumerate(self.slices):
-            x = layer(x)
-            if str(i) in layer_ids:
-                feat.append(x)
-        return feat
+def load_image(image):
+    image = Image.open(image).convert('RGB')
+    image_transforms = transforms.Compose([
+        transforms.Resize(TARGET_SIZE),
+        transforms.ToTensor(),
+        transforms.Normalize(VGG_MEAN, VGG_STD)
+    ])
+    image = image_transforms(image)
+    return image
 
-def gram_matrix(x):
-    b, c, h, w = x.size()
-    f = x.view(b, c, h * w)
-    gram = torch.bmm(f, f.transpose(2, 1))
-    return gram / (c * h * w)
 
+def save_model_checkpoint(model, optimizer, epoch, filename):
+    checkpoint = {MODEL_KEY: model.state_dict(),
+                  OPTIMIZER_KEY: optimizer.state_dict(),
+                  EPOCH_KEY: epoch}
+    torch.save(checkpoint, MODEL_CHECKPOINT_FILEPATH.format(filename))
+
+
+def load_model_checkpoint(model, optimizer, filename):
+    model_checkpoint = torch.load(MODEL_CHECKPOINT_FILEPATH.format(filename))
+    model_state_dict, optimizer_state_dict = (model_checkpoint[MODEL_KEY],
+                                              model_checkpoint[OPTIMIZER_KEY])
+    model.load_state_dict(model_state_dict)
+    optimizer.load_state_dict(optimizer_state_dict)
+
+
+def style_image(model, image, filename=None):
+    model.eval()
+
+    image = image.unsqueeze(0).to(DEVICE)
+
+    with torch.no_grad():
+        styled_image = model(image)
+
+    styled_image = show_image(styled_image)
+    if filename != None:
+        styled_image.save(STYLED_IMAGE_FILEPATH.format(filename))
+
+    return styled_image
