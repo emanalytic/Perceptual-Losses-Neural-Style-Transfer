@@ -1,0 +1,5 @@
+torchvision~=0.20.1
+pillow~=11.0.0
+tqdm~=4.67.1
+matplotlib~=3.9.2
+torchsummary~=1.5.1
