@@ -25,7 +25,7 @@ For a detailed understanding of the underlying concepts, check out my notebook i
 
 ### 4. Use the Pretrained Model
 - If you don't want to train the model yourself, you can use the pretrained model available in this repository. Download it from [this link](#).
-
+- 
 ---
 
 ## Results
