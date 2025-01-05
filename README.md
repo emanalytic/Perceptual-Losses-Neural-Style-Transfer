@@ -8,7 +8,7 @@ Neural style transfer was initially introduced in the paper by Gatys et al., whi
 
 To address this, the PyTorch team has a tutorial for implementing Gatys' optimization-based method. However, this project implements the method described in Johnson et al.'s paper, which trains a model to perform style transfer efficiently. The trained model can then generate stylized images in real-time.
 
-For a detailed understanding of the underlying concepts, check out my notebook included in this repository.
+For a detailed understanding of the underlying concepts, check out my [notebook](https://github.com/emanalytic/Perceptual-Losses-Neural-Style-Transfer/blob/main/notebooks/experimentation_v02.ipynb) included in this repository.
 
 ---
 
