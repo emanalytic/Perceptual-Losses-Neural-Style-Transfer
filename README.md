@@ -45,7 +45,7 @@ Below are some example results of the style transfer model:
 - `model.py`: Model Implementation from pytorch example repo
 - `loss.py` : Perceptual Loss Implementation
 - `experimentation_v02.ipynb`: Jupyter notebook explaining the concepts and code in detail.
-- `data/`: Directory for storing the COCO dataset.
+- `data/`: Directory for storing the content images and style image.
 
 ---
 
@@ -60,4 +60,5 @@ Below are some example results of the style transfer model:
 ---
 
 Feel free to explore the code and adapt it to your needs. If you encounter any issues, let me know!
+(!): If you don't have gpus to train this you can utilize kaggle gpus. ;)
 
