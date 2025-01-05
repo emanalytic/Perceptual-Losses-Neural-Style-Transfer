@@ -4,7 +4,7 @@ This project is an implementation of the paper ["Perceptual Losses for Real-Time
 
 ## Overview
 
-Neural style transfer was initially introduced in the paper by Gatys et al., which used an optimization-based approach to generate stylized images. While this method produces high-quality results, it is computationally expensive and slow.
+Neural style transfer was initially introduced in the paper by Gatys et al., which used an optimization based approach to generate stylized images. While this method produces high-quality results, it is computationally expensive and slow.
 
 To address this, the PyTorch team has a tutorial for implementing Gatys' optimization-based method. However, this project implements the method described in Johnson et al.'s paper, which trains a model to perform style transfer efficiently. The trained model can then generate stylized images in real-time.
 
