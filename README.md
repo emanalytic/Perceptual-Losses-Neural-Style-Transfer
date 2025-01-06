@@ -72,6 +72,7 @@ Below are some example results of the style transfer model:
 - `loss.py` : Perceptual Loss Implementation
 - `neural_style_transfer.ipynb`: Jupyter notebook explaining the concepts and code in detail.
 - `data/`: Directory for storing the content images and style image.
+- `utils/`: For configuration and utility functions 
 ---
 
 ## References
