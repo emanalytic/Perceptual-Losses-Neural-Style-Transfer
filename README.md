@@ -24,11 +24,11 @@ For mathematical details and implementation insights, check out my [notebook](ht
 ---
 ## Installation 
 
-`bash
+```bash
 git clone https://github.com/emanalytic/Perceptual-Losses-Neural-Style-Transfer.git
 cd Perceptual-Losses-Neural-Style-Transfer
 pip install -r requirements.txt
-`
+```
 
 ## Hardware and GPU Utilization
 This project has been tested on an NVIDIA GeForce GTX 1650 GPU with 4GB VRAM. For larger dataset or more complex model, you can utilize Kaggle's Tesla GPUs, which provide 16GB of VRAM for training.
