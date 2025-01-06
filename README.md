@@ -82,4 +82,4 @@ Below are some example results of the style transfer model:
 - [Reference Repository](https://github.com/francislata/Perceptual-Losses/tree/master)
 - [Helpful Article](https://sh-tsang.medium.com/brief-review-perceptual-losses-for-real-time-style-transfer-and-super-resolution-ac4fd2658b8)
 ---
-:)
+
