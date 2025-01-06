@@ -19,7 +19,7 @@ The model architecture follows Johnson et al.'s design, featuring residual block
 * Content loss: MSE between feature representations of content and stylized images
 * Style loss: MSE between Gram matrices of feature maps
 
-For mathematical details and implementation insights, check out my [notebook](https://github.com/emanalytic/Perceptual-Losses-Neural-Style-Transfer/blob/main/notebooks/experimentation_v02.ipynb) included in this repository.
+For mathematical details and implementation insights, check out my [notebook](https://github.com/emanalytic/Perceptual-Losses-Neural-Style-Transfer/blob/main/notebooks/neural_style_transfer.ipynb) included in this repository.
 
 ---
 ## Installation 
@@ -31,12 +31,13 @@ pip install -r requirements.txt
 ```
 
 ## Hardware and GPU Utilization
-This project has been tested on an NVIDIA GeForce GTX 1650 GPU with 4GB VRAM. For larger dataset or more complex model, you can utilize Kaggle's Tesla GPUs, which provide 16GB of VRAM for training.
+For this project, I used an NVIDIA GeForce GTX 1650 GPU with 4GB VRAM to train on a smaller patch of about 40K images. However, the full training was done on 82K images from the COCO dataset.
+If you don’t have a GPU, you can use Kaggle’s Tesla GPUs, which come with 16GB of VRAM. They’re pretty fast, and the best part is that you don’t need to download the datasets locally it’s all handled on the platform!
+## Note(!)
 
-## Install PyTorch for Your GPU
 Ensure you install the version of PyTorch compatible with your GPU. 
 You can find the correct version for your setup by visiting the [PyTorch installation page](https://pytorch.org/get-started/locally/).
-
+I recommend using CUDA 12.1 or higher for better performance.
 
 ## How to Use
 ### 1. Train you own Model
@@ -60,6 +61,9 @@ Below are some example results of the style transfer model:
 | Content Image | Style Image | Stylized Image |
 |---------------|-------------|----------------|
 | ![Content](https://github.com/emanalytic/Perceptual-Losses-Neural-Style-Transfer/blob/main/data/content_dir/test_image_01.png) | ![style](https://github.com/emanalytic/Perceptual-Losses-Neural-Style-Transfer/blob/main/data/Vincent_van_Gogh.png) | ![stylized](https://github.com/emanalytic/Perceptual-Losses-Neural-Style-Transfer/blob/main/data/styled_image.png) |
+| ![new1](URL_for_new_image_1) | ![new2](URL_for_new_image_2) | ![new3](URL_for_new_image_3) |
+| ![new4](URL_for_new_image_4) | ![new5](URL_for_new_image_5) | ![new6](URL_for_new_image_6) |
+
 
 ---
 
@@ -71,6 +75,7 @@ Below are some example results of the style transfer model:
 - `loss.py` : Perceptual Loss Implementation
 - `neural_style_transfer.ipynb`: Jupyter notebook explaining the concepts and code in detail.
 - `data/`: Directory for storing the content images and style image.
+- `utils/`: For configuration and utility functions 
 ---
 
 ## References
