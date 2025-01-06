@@ -5,33 +5,57 @@ This project is an implementation of the paper ["Perceptual Losses for Real-Time
 Neural style transfer was initially introduced in the paper by Gatys et al., which used an optimization based approach to generate stylized images. While this method produces high-quality results, it is computationally expensive and slow.
 Pytorch has a tutorial for implementing the Gatys' Optimzation Based method, check this out [Pytorch Tutorial](https://pytorch.org/tutorials/advanced/neural_style_tutorial.html). 
 
-## Implementation 
+## Overview 
 
+This implementation achieves real-time neural style transfer by:
 
+* Training a feed-forward transformation network to directly generate stylized images
+* Using perceptual losses computed from a pre-trained VGG-16 network
+* Optimizing both content and style representations simultaneously
+* Enabling fast inference with a single forward pass
 
+The model architecture follows Johnson et al.'s design, featuring residual blocks and upsampling layers. The perceptual loss combines:
 
-For a detailed understanding of the underlying concepts, check out my [notebook](https://github.com/emanalytic/Perceptual-Losses-Neural-Style-Transfer/blob/main/notebooks/experimentation_v02.ipynb) included in this repository.
+* Content loss: MSE between feature representations of content and stylized images
+* Style loss: MSE between Gram matrices of feature maps
+
+For mathematical details and implementation insights, check out my [notebook](https://github.com/emanalytic/Perceptual-Losses-Neural-Style-Transfer/blob/main/notebooks/experimentation_v02.ipynb) included in this repository.
 
 ---
+## Installation 
+
+`bash
+git clone https://github.com/emanalytic/Perceptual-Losses-Neural-Style-Transfer.git
+cd Perceptual-Losses-Neural-Style-Transfer
+pip install -r requirements.txt
+`
+
+## Hardware and GPU Utilization
+This project has been tested on an NVIDIA GeForce GTX 1650 GPU with 4GB VRAM. For larger dataset or more complex model, you can utilize Kaggle's Tesla GPUs, which provide 16GB of VRAM for training.
+
+#### Install PyTorch for Your GPU
+Ensure you install the version of PyTorch compatible with your GPU. 
+You can find the correct version for your setup by visiting the [PyTorch installation page](https://pytorch.org/get-started/locally/).
+
 
 ## How to Use
-
 ### 1. Train you own Model
-- Download the COCO dataset from [this link](https://cocodataset.org/#download) and place it in the `data/coco` directory.
+- Download the COCO dataset from [this link](https://cocodataset.org/#download) and place it in the `data/content_dir` directory.(Also change the paths in `config.ini`)
 
 - Use the `train.py` script to train the style transfer model.
 - Run the following command:
   ```bash
   python train.py 
   ```
-(!): If you don't have gpus to train this you can utilize kaggle gpus. ;)
 
 ### 4. Use the Pretrained Model
-- If you don't want to train the model yourself, you can use the pretrained model available in this repository. Download it from [this link](#). 
+- If you don't want to train the model yourself, you can use the pretrained model available in this repository.
+  You can download the checkpoints [Pretrained Model](https://github.com/emanalytic/Perceptual-Losses-Neural-Style-Transfer/blob/main/models/checkpoints/).
+  And after loading them you can just simply test the different version of model. 
 ---
 
 ## Results
-
+## add another coloumn for another picture !!
 Below are some example results of the style transfer model:
 
 | Content Image | Style Image | Stylized Image |
@@ -46,9 +70,8 @@ Below are some example results of the style transfer model:
 - `vgg.py`: Script for hook manager to get features
 - `model.py`: Model Implementation from pytorch example repo
 - `loss.py` : Perceptual Loss Implementation
-- `experimentation_v02.ipynb`: Jupyter notebook explaining the concepts and code in detail.
+- `neural_style_transfer.ipynb`: Jupyter notebook explaining the concepts and code in detail.
 - `data/`: Directory for storing the content images and style image.
-
 ---
 
 ## References
