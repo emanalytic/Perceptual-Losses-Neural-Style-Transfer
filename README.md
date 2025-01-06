@@ -61,6 +61,9 @@ Below are some example results of the style transfer model:
 | Content Image | Style Image | Stylized Image |
 |---------------|-------------|----------------|
 | ![Content](https://github.com/emanalytic/Perceptual-Losses-Neural-Style-Transfer/blob/main/data/content_dir/test_image_01.png) | ![style](https://github.com/emanalytic/Perceptual-Losses-Neural-Style-Transfer/blob/main/data/Vincent_van_Gogh.png) | ![stylized](https://github.com/emanalytic/Perceptual-Losses-Neural-Style-Transfer/blob/main/data/styled_image.png) |
+| ![new1](URL_for_new_image_1) | ![new2](URL_for_new_image_2) | ![new3](URL_for_new_image_3) |
+| ![new4](URL_for_new_image_4) | ![new5](URL_for_new_image_5) | ![new6](URL_for_new_image_6) |
+
 
 ---
 
