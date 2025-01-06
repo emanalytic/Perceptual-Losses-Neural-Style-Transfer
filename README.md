@@ -33,7 +33,7 @@ pip install -r requirements.txt
 ## Hardware and GPU Utilization
 This project has been tested on an NVIDIA GeForce GTX 1650 GPU with 4GB VRAM. For larger dataset or more complex model, you can utilize Kaggle's Tesla GPUs, which provide 16GB of VRAM for training.
 
-#### Install PyTorch for Your GPU
+## Install PyTorch for Your GPU
 Ensure you install the version of PyTorch compatible with your GPU. 
 You can find the correct version for your setup by visiting the [PyTorch installation page](https://pytorch.org/get-started/locally/).
 
@@ -55,7 +55,6 @@ You can find the correct version for your setup by visiting the [PyTorch install
 ---
 
 ## Results
-## add another coloumn for another picture !!
 Below are some example results of the style transfer model:
 
 | Content Image | Style Image | Stylized Image |
