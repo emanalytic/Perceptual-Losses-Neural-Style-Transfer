@@ -33,11 +33,11 @@ pip install -r requirements.txt
 ## Hardware and GPU Utilization
 For this project, I used an NVIDIA GeForce GTX 1650 GPU with 4GB VRAM to train on a smaller patch of about 40K images. However, the full training was done on 82K images from the COCO dataset.
 If you don’t have a GPU, you can use Kaggle’s Tesla GPUs, which come with 16GB of VRAM. They’re pretty fast, and the best part is that you don’t need to download the datasets locally it’s all handled on the platform!
+## Note(!)
 
-## Install PyTorch for Your GPU
 Ensure you install the version of PyTorch compatible with your GPU. 
 You can find the correct version for your setup by visiting the [PyTorch installation page](https://pytorch.org/get-started/locally/).
-
+I recommend using CUDA 12.1 or higher for better performance.
 
 ## How to Use
 ### 1. Train you own Model
