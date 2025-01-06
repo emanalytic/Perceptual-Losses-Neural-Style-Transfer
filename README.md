@@ -1,13 +1,14 @@
 # Neural Style Transfer with Perceptual Losses
 
-This project is an implementation of the paper ["Perceptual Losses for Real-Time Style Transfer and Super-Resolution"](https://arxiv.org/pdf/1603.08155) by Johnson et al. The main idea is to train a feed-forward neural network for style transfer using perceptual losses, enabling real-time style transfer.
-
-## Overview
+This project is an implementation of the paper ["Perceptual Losses for Real-Time Style Transfer and Super-Resolution"](https://arxiv.org/pdf/1603.08155) by Johnson et al. The main idea is to train a feed forward neural network for style transfer using perceptual losses, enabling real-time style transfer. 
 
 Neural style transfer was initially introduced in the paper by Gatys et al., which used an optimization based approach to generate stylized images. While this method produces high-quality results, it is computationally expensive and slow.
-Pytorch has official implementation of this method, check this out [Pytorch Tutorial](https://pytorch.org/tutorials/advanced/neural_style_tutorial.html). 
+Pytorch has a tutorial for implementing the Gatys' Optimzation Based method, check this out [Pytorch Tutorial](https://pytorch.org/tutorials/advanced/neural_style_tutorial.html). 
 
-To address this, the PyTorch team has a tutorial for implementing Gatys' optimization-based method. However, this project implements the method described in Johnson et al.'s paper, which trains a model to perform style transfer efficiently. The trained model can then generate stylized images in real-time.
+## Implementation 
+
+
+
 
 For a detailed understanding of the underlying concepts, check out my [notebook](https://github.com/emanalytic/Perceptual-Losses-Neural-Style-Transfer/blob/main/notebooks/experimentation_v02.ipynb) included in this repository.
 
