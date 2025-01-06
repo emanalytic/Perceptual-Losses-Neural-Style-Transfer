@@ -22,7 +22,7 @@ LR = config.get('settings', 'lr')
 CONTENT_DIR = config.get('paths', 'content_dir')
 BATCH_SIZE = int(config.get('settings', 'batch_size'))
 EPOCHS  = int(config.get('settings', 'epochs'))
-style_image = config.get('paths', 'style_image')
+STYLE_IMAGE = config.get('paths', 'style_image')
 
 
 network = ImageTransformerNet()
