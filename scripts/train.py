@@ -1,7 +1,7 @@
 from torch.utils.data import DataLoader
 
 from scripts.dataloader import TrainingDataset
-from scripts.model import ImageTransformerNet
+from scripts.transformer_network import ImageTransformerNet
 from scripts.loss import PerceptualLoss
 from scripts.vgg import ForwardHookManager
 
