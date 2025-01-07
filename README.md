@@ -13,7 +13,7 @@ This implementation achieves real-time neural style transfer by:
 * Using perceptual losses computed from a pre-trained VGG-16 network
 * Optimizing both content and style representations simultaneously
 * Enabling fast inference with a single forward pass
-
+ 
 The model architecture follows Johnson et al.'s design, featuring residual blocks and upsampling layers. The perceptual loss combines:
 
 * Content loss: MSE between feature representations of content and stylized images
