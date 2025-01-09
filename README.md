@@ -84,7 +84,6 @@ Below are some example results of the style transfer model:
 - [Gatys et al.'s Neural Style Transfer](https://arxiv.org/pdf/1508.06576)
 - [PyTorch Neural Style Transfer Tutorial](https://pytorch.org/tutorials/advanced/neural_style_tutorial.html)
 - [Pytorch Example](https://github.com/pytorch/examples)
-- [Reference Repository](https://github.com/francislata/Perceptual-Losses/tree/master)
 - [Helpful Article](https://sh-tsang.medium.com/brief-review-perceptual-losses-for-real-time-style-transfer-and-super-resolution-ac4fd2658b8)
 ---
 
